@@ -242,9 +242,11 @@ app.view("service:show", async ({ ack, context, view, body }) => {
 });
 
 const publishHomeView = (userId, user, context) => {
-  let services = user.services.sort((a, b) => {
-    return b.lastUsed.seconds - a.lastUsed.seconds;
-  });
+  let services = user.services
+    ? user.services.sort((a, b) => {
+        return b.lastUsed.seconds - a.lastUsed.seconds;
+      })
+    : [];
 
   services = services.length > 30 ? services.slice(0, 30) : services;
 
