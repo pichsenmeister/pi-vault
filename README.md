@@ -2,7 +2,7 @@
 
 A password manager for Slack
 
-[Install PI Vault for Slack](https://slack.com/oauth/v2/authorize?client_id=567034155908.943035455044&scope=chat:write,commands,im:history,im:write,reactions:write,files:read)
+[Install PI Vault for Slack](https://slack.com/oauth/v2/authorize?client_id=567034155908.1018870696759&scope=chat:write)
 
 This app uses the [Bolt for Slack](https://slack.dev/bolt/concepts) framework and Google Firebase.
 
