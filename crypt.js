@@ -20,20 +20,23 @@ const crypt = (metadata, salt) => {
   // add special characters
   if (metadata.config.special_chars)
     gen =
-      "$" +
-      gen.substr(0, 5) +
+      gen.substr(0, 4) +
+      "+" +
+      gen.substr(4, 4) +
       "!" +
-      gen.substr(5, 5) +
+      gen.substr(8, 4) +
       "&" +
-      gen.substr(10, 5) +
+      gen.substr(12, 4) +
       "?" +
-      gen.substr(15, 5) +
-      "%";
+      gen.substr(16, 4) +
+      "#" +
+      gen.substr(20, 4);
   return gen.substr(0, metadata.config.length);
 };
 
 const transformUpperCase = str => {
-  for (let i = 1; (i += 3); i <= 25) {
+  for (let i = 1; i <= 25; i += 3) {
+    console.log(i);
     str = replaceAt(str, i, str.charAt(i).toUpperCase());
   }
   return str;

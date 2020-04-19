@@ -201,6 +201,7 @@ app.view("service:add", async ({ ack, context, view, body }) => {
 });
 
 app.view("service:unlock", async ({ ack, context, view, body }) => {
+  console.log('unlock')
   const metadata = JSON.parse(view.private_metadata);
   const password = view.state.values.password.data.value;
 
@@ -223,6 +224,12 @@ app.view("service:unlock", async ({ ack, context, view, body }) => {
     return service;
   });
   await store.saveUser(body.user.id, user);
+  
+  console.log(payloads.modals.showService({
+      service: metadata.service,
+      email: metadata.email,
+      password: gen
+    }))
 
   ack({
     response_action: "update",
