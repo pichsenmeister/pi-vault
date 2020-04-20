@@ -11,7 +11,7 @@ This app uses the [Bolt for Slack](https://slack.dev/bolt/concepts) framework an
 1. Create an [app](https://api.slack.com/apps) on Slack
 2. Enable `Home Tab` in `App Home`
 3. Enable `Interactivity & Shortcuts` and enter your `Request url`
-4. Enable 'Event Subscription`
+4. Enable `Event Subscription`
   - Subscribe to `Bot Events`: `app_home_opened`
 5. Add `Bot Token Scopes` in `OAuth & Permissions`
   - `chat:write`
